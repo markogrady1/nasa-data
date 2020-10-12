@@ -12,7 +12,7 @@ npm i
 Startup application in development
 
 ```
-nodemon bin/server.js
+API_KEY=<NASA_API_KEY> nodemon bin/server.js
 ```
 or via npm
 
@@ -23,11 +23,11 @@ npm run dev
 Startup application in production
 
 ```
-pm2 start bin/server.js
+API_KEY=<NASA_API_KEY> pm2 start bin/server.js
 ```
 
 or via npm
 
 ```
-npm run start
+API_KEY=<NASA_API_KEY> npm run start
 ```

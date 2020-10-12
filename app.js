@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const homeRouter = require('./routes/home');
+const apodRouter = require('./routes/apod');
+const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -11,7 +13,12 @@ app.get(['/healthcheck', '/api/healthcheck'], (req, res) => {
   );
 });
 
-app.use('/', homeRouter);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
+app.use('/', homeRouter);
+app.use('/apod', apodRouter);
 
 module.exports = app;

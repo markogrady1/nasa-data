@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const logger = require('morgan');
 const Promise = require('bluebird');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const uuidv1 = require('uuid/v1');
 
 const log = require('../config/logger');
@@ -17,12 +16,6 @@ logger.token('myurl', req => {
 logger.token('reqid', req => req.reqid);
 
 const app = require('../app');
-
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
-
-app.use(bodyParser.json());
 
 app.use(helmet()); // noSniff, xssFilter etc
 app.use(cors());
