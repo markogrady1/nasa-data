@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const request = require('../request');
 
 class Apod {
