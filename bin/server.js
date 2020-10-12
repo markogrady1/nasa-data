@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 const config = require('config');
 const hbs = require('hbs');
 const helmet = require('helmet');
 const logger = require('morgan');
 const Promise = require('bluebird');
 const cors = require('cors');
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const uuidv1 = require('uuid/v1');
 
 const log = require('../config/logger');
