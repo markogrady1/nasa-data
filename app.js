@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+
 const homeRouter = require('./routes/home');
 const apodRouter = require('./routes/apod');
-const bodyParser = require('body-parser');
+const marsRoverRoute = require('./routes/mars-rover');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -20,5 +23,6 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', homeRouter);
 app.use('/apod', apodRouter);
+app.use('/rovers', marsRoverRoute);
 
 module.exports = app;
