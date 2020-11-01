@@ -15,7 +15,7 @@ const log = winston.createLogger({
     }),
     new winston.transports.File({
       filename:
-        process.env.ACCESS_LOG_FILE || `${root}/logs/boilerplate-app.log`,
+        process.env.ACCESS_LOG_FILE || `${root}/logs/nasa-data.log`,
       level: process.env.APP_LOG_LEVEL || 'info',
       format: formatOpts
     })
