@@ -1,6 +1,9 @@
 const config = {
   port: 3333,
   version: '0.2.0',
+  apiUrls: {
+    nasaApi: 'https://api.nasa.gov'
+  },
   dataStore: {
     db: {
       host: process.env.DBHOST || 'localhost',

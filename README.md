@@ -31,3 +31,16 @@ or via npm
 ```
 API_KEY=<NASA_API_KEY> npm run start
 ```
+
+API requests
+
+APOD - Astronomy Picture of the Day
+
+curl request
+
+```
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"dates":"2020-10-09"}'\
+  http://localhost:3333/apod
+```

@@ -1,9 +1,10 @@
 /* eslint-disable max-len */
+const config = require('config');
 const request = require('../request');
 
 class MarsRover {
   constructor() {
-
+    this.baseUrl = config.get('apiUrls.nasaApi');;
   }
 
   async solImages(args) {
@@ -11,7 +12,7 @@ class MarsRover {
     const apiKey = process.env.API_KEY;
     const requestData = {
       method: 'get',
-      url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${args.rover}/photos?api_key=${apiKey}`
+      url: this.baseUrl + `/mars-photos/api/v1/rovers/${args.rover}/photos?api_key=${apiKey}`
         + `?sol=${args.sol}&page=${args.page}`
     };
 

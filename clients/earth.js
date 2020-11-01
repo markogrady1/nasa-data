@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
+const config = require('config');
 const request = require('../request');
 
 class Earth {
   constructor() {
+    this.baseUrl = config.get('apiUrls.nasaApi');
 
   }
 
@@ -13,7 +15,7 @@ class Earth {
     const cloudScoreStr = cloudScore ? `&cloud_score=${cloudScore}` : '';
     const requestData = {
       method: 'get',
-      url: `https://api.nasa.gov/planetary/earth/imagery?lat=${lat}&lon=${lon}&api_key=${apiKey}${dateStr}${cloudScoreStr}`,
+      url: this.baseUrl + `/planetary/earth/imagery?lat=${lat}&lon=${lon}&api_key=${apiKey}${dateStr}${cloudScoreStr}`,
     };
 
     return await request.httpRequest(requestData);
@@ -26,7 +28,7 @@ class Earth {
     const dimStr = dim ? `&dim=${dim}` : '';
     const requestData = {
       method: 'get',
-      url: `https://api.nasa.gov/planetary/earth/assets?lat=${lat}&lon=${lon}&api_key=${apiKey}${dateStr}${dimStr}`,
+      url: this.baseUrl + `/planetary/earth/assets?lat=${lat}&lon=${lon}&api_key=${apiKey}${dateStr}${dimStr}`,
     };
 
     return await request.httpRequest(requestData);
