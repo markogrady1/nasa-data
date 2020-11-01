@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "node-boilerplate",
+      "name": "nasa-data",
       "script": "bin/server.js",
       "exec_mode": "cluster",
       "max_restarts": 5,
