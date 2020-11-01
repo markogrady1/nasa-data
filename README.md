@@ -34,7 +34,7 @@ API_KEY=<NASA_API_KEY> npm run start
 
 API requests
 
-APOD - Astronomy Picture of the Day
+### APOD - Astronomy Picture of the Day
 
 curl request
 
@@ -44,3 +44,14 @@ curl --header "Content-Type: application/json" \
   --data '{"dates":"2020-10-09"}'\
   http://localhost:3333/apod
 ```
+
+
+### Mars Rovers
+
+curl request
+
+```
+curl http://localhost:3333/:rover/:sol/:page
+```
+
+Rovers include [curiosity, spirit, opportunity]

@@ -5,7 +5,7 @@ const log = require('../config/logger');
 
 router.get('/:rover/:sol/:page', async (req, res) => {
 
-  const { rover, sol, page } = req.query;
+  const { rover, sol, page } = req.params;
 
   try {
     const marsRover = new MarsRover();
@@ -15,12 +15,12 @@ router.get('/:rover/:sol/:page', async (req, res) => {
     res.json({
       success: 1,
       data: {
-        data: result.photos,
+        data: result.data.photos,
         time: new Date().toJSON()
       }
     });
   } catch (err) {
-    log.error('unsuccessful mars rover image request');
+    log.error('unsuccessful mars rover image request' + err);
     res.json({
       success: 0,
       error: err

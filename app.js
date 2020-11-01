@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const homeRouter = require('./routes/home');
 const apodRouter = require('./routes/apod');
 const marsRoverRoute = require('./routes/mars-rover');
+const earthRoute = require('./routes/earth');
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(bodyParser.urlencoded({
 app.use('/', homeRouter);
 app.use('/apod', apodRouter);
 app.use('/rovers', marsRoverRoute);
+app.use('/earth', earthRoute);
 
 module.exports = app;
