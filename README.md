@@ -48,10 +48,18 @@ curl --header "Content-Type: application/json" \
 
 ### Mars Rovers
 
-curl request
+curl requests
+
+all data for a given rover and sol
 
 ```
-curl http://localhost:3333/:rover/:sol/:page
+curl http://localhost:3333/rovers/data/:rover/:sol/:page
+```
+
+rover images for a given rover and sol
+
+```
+curl http://localhost:3333/rovers/photos/:rover/:sol/:page
 ```
 
 Rovers include [curiosity, spirit, opportunity]
